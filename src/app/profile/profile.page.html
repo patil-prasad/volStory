@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color="primary">
+      <ion-back-button defaultHref="/tab/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="create" size="large" margin-end></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" offset="4">
+        <div class="ion-text-center">
+          <img src="https://picsum.photos/50" class="profile-image" />
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="ion-text-center">
+          <ion-text class="no-padding">Abhiram Thakur<br></ion-text>
+          <small class="info">25,MAle<br></small>
+          <small class="info">Pune,MAharashtra</small>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row padding>
+      <ion-col size="6" style="border-right: 0.5px solid #b2b2b2">
+
+        <div class="ion-text-center">
+          <ion-text class="Followers"><b>108<br></b></ion-text>
+          <ion-text class="Followers">Following</ion-text>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+
+        <div class="ion-text-center">
+          <ion-text class="Followers"><b>145<br></b></ion-text>
+          <ion-text class="Followers">Followers</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+    <div class="detail" item-start>
+      <ion-row class="contact">
+        <img item-start class="e-detail" src="../../assets/imgs/SystemIcons/call.svg">
+        <ion-label class="contact-text">8756542452</ion-label>
+      </ion-row>
+    </div>
+    <div class="detail" item-start>
+      <ion-row class="contact">
+        <img item-start class="e-detail" src="../../assets/imgs/SystemIcons/mail.svg">
+        <ion-label class="contact-text">saniyamathur@gmail.com</ion-label>
+      </ion-row>
+    </div>
+    <div class="detail" item-start>
+      <ion-row class="contact">
+        <img item-start class="e-detail" src="../../assets/imgs/SystemIcons/public event.svg">
+        <ion-label class="contact-text">www.worldpeace.com</ion-label>
+      </ion-row>
+    </div>
+    <div class="divide"></div>
+
+    <ion-list>
+        <ion-list-header (click)="onDropDown()">
+          <ion-text>Events Volunteered</ion-text>
+          <ion-icon name="arrow-dropdown" size="large" margin-start margin-end></ion-icon>
+        </ion-list-header>
+        <ion-item *ngIf="showSkill">
+          <div>
+            <ion-text *ngFor="let skill of event.skills">
+              <ion-chip>{{skill}}</ion-chip>
+            </ion-text>
+          </div>
+        </ion-item>
+      </ion-list>
+      <div class="divide" style="padding:0px"></div>
+      <ion-list>
+          <ion-list-header (click)="onDropDown()">
+            <ion-text>Events Hosted</ion-text>
+            <ion-icon name="arrow-dropdown" size="large" margin-start margin-end></ion-icon>
+          </ion-list-header>
+          <ion-item *ngIf="showSkill">
+            <div>
+              <ion-text *ngFor="let skill of event.skills">
+                <ion-chip>{{skill}}</ion-chip>
+              </ion-text>
+            </div>
+          </ion-item>
+        </ion-list>
+        <div class="divide" style="padding:0px"></div>
+    <ion-list>
+        <ion-list-header (click)="onDropDown()">
+          <ion-text>Skills</ion-text>
+          <ion-icon name="arrow-dropdown" size="large" margin-start margin-end></ion-icon>
+        </ion-list-header>
+        <ion-item *ngIf="showSkill">
+          <div>
+            <ion-text *ngFor="let skill of event.skills">
+              <ion-chip>{{skill}}</ion-chip>
+            </ion-text>
+          </div>
+        </ion-item>
+      </ion-list>
+      <div class="divide" style="padding:0px"></div>
+      <ion-list>
+          <ion-list-header (click)="onDropDown()">
+            <ion-text>Interests</ion-text>
+            <ion-icon name="arrow-dropdown" size="large" margin-start margin-end></ion-icon>
+          </ion-list-header>
+          <ion-item *ngIf="showSkill">
+            <div>
+              <ion-text *ngFor="let skill of event.skills">
+                <ion-chip>{{skill}}</ion-chip>
+              </ion-text>
+            </div>
+          </ion-item>
+        </ion-list>
+  </ion-grid>
+
+
+
+</ion-content>

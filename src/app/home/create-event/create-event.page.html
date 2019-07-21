@@ -1,0 +1,192 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">Create Event</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div class="scroll"> -->
+  <ion-progress-bar value={{progress}} color="secondary" style="height: 1%"></ion-progress-bar>
+  <!-- First page -->
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div *ngIf='progress === 0.333' style="padding-bottom: 50px;">
+    <img src="../../assets/imgs/pp.png">
+
+    <ion-item>
+      <ion-input placeholder="Event Title" ngModel type="text" name="title" required #titleCheck="ngModel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label style="margin:0px">Event Category</ion-label>
+      <ion-icon name="arrow-down"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Event Location" ngModel type="text" name="locationAddress" required #locationCheck="ngModel"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Description</ion-label>
+      <small style="float : left">150-300 characters</small>
+    </ion-item>
+    <ion-textarea class="box" style="height: 100px"></ion-textarea>
+
+    <ion-item lines="none">
+      <ion-label>Tags</ion-label>
+    </ion-item>
+    <ion-textarea class="box" ngModel type="text" name="description" required #descriptionCheck="ngModel"></ion-textarea>
+  </div>
+</form>
+  <!-- Second PAge -->
+
+  <div *ngIf='progress === 0.666'>
+
+
+    <div class="item">
+      <ion-label>
+        Event Description
+      </ion-label>
+    </div>
+
+    <div class="item">
+      <ion-label>
+        From
+      </ion-label>
+    </div>
+    <ion-item>
+      <ion-datetime displayFormat="DDD, MMM DD, YYYY HH:mm, A" placeholder="Day / Date / Time" [(ngModel)]="startDate">
+      </ion-datetime>
+    </ion-item>
+    <div class="item">
+      <ion-label>
+        To
+      </ion-label>
+    </div>
+    <ion-item>
+      <ion-datetime displayFormat="DDD, MMM DD, YYYY HH:mm, A" placeholder="Day / Date / Time" [(ngModel)]="endDate">
+      </ion-datetime>
+    </ion-item>
+    <div class="item">
+      <ion-label>
+        Last Date Of Joining
+      </ion-label>
+    </div>
+    <ion-item>
+      <ion-datetime displayFormat="DDD, MMM DD, YYYY HH:mm, A" placeholder="Day / Date" [(ngModel)]="lastJoinDate">
+      </ion-datetime>
+    </ion-item>
+
+    <div class="item">
+      <ion-label>
+        Required Volunteers
+      </ion-label>
+    </div>
+
+    <ion-grid>
+      <ion-row class="vol" style="text-align: center">
+        <ion-col size="6" size-md="3">
+          <ion-item lines="none">
+            Min <input type="number" style="width: 30%" value="min" class="box">
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" size-md="3">
+          <ion-item lines="none">
+            Max <input type="number" value="max" class="box" style="width: 30%">
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="item">
+      <ion-label>
+        Required Skills
+      </ion-label>
+      <ion-item>
+        <ion-input></ion-input>
+      </ion-item>
+
+    </div>
+    <div style="padding-bottom: 50px;">
+      <ion-chip color="dark" outline="true">Leadership</ion-chip>
+      <ion-chip color="dark" outline="true">Management</ion-chip>
+      <ion-chip color="dark" outline="true">Cooking</ion-chip>
+      <ion-chip color="dark" outline="true">Manage Accounts</ion-chip>
+      <ion-chip color="dark" outline="true">Gardening</ion-chip>
+
+    </div>
+  </div>
+  <!-- Third page -->
+  <div *ngIf='progress > 1'>
+    <div style="padding-top: 15px">
+      <ion-label style="margin-top: 15px"><b>Facilities</b></ion-label>
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="4">
+          <ion-label>Snacks</ion-label>
+        </ion-col>
+        <ion-col size-md="4">
+          <ion-label>Certificate</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-md="4">
+          <ion-label>Meals</ion-label>
+        </ion-col>
+        <ion-col size-md="4">
+          <ion-label>Money</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div style="padding-top: 15px">
+      <ion-label><b>Visibility</b></ion-label>
+    </div>
+    <div class="item">
+      <ion-radio-group>
+        <ion-row>
+
+          <ion-label style="padding-top: 10px;">
+            <ion-radio></ion-radio>
+            <span style="margin-left: 10px"></span>Public
+          </ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-label style="padding-top: 10px">
+            <ion-radio></ion-radio>
+            <span style="margin-left: 10px"></span>Followers
+          </ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-label style="padding-top: 10px">
+            <ion-radio></ion-radio>
+            <span style="margin-left: 10px"></span>By Invite
+          </ion-label>
+        </ion-row>
+      </ion-radio-group>
+    </div>
+  
+  <div class="add-media">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <img src="../../../assets/imgs/SystemIcons/add photo album.svg" class="small-icon" />
+          <ion-label>Add Photo</ion-label>
+        </ion-col>
+        <ion-col>
+          <img src="../../../assets/imgs/SystemIcons/add video album.svg" class="small-icon" />
+          <ion-label>Add Video</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
+
+</ion-content>
+<ion-footer>
+  <ion-row>
+    <ion-button class="back" type="button">BACK</ion-button>
+    <ion-button type="submit" class="next"  (click)="next()" >NEXT</ion-button>
+  </ion-row>
+</ion-footer>

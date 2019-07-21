@@ -1,0 +1,66 @@
+<ion-app>
+  <ion-split-pane when="md">
+    <ion-menu side="start" id="side">
+      <ion-header>
+        <ion-toolbar>
+          <ion-menu-toggle [routerLink]="['tab/profile']" autoHide="false">
+            <ion-row>
+              <ion-avatar style="margin: 15px 0px 0px 15px">
+                <img src="https://picsum.photos/100" />
+              </ion-avatar>
+            </ion-row>
+            <ion-row>
+              <ion-title>Abhiram Thakur</ion-title>
+            </ion-row>
+
+          </ion-menu-toggle>
+
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list lines="none">
+          <ion-menu-toggle autoHide="false">
+            <ion-item padding-top [routerLink]="['/settings']" routerLinkActive="router-link-active">
+              <ion-icon name="settings" slot="start"></ion-icon>
+              Settings
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle autoHide="false">
+            <ion-item padding-top>
+              <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+              App Info
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle autoHide="false">
+            <ion-item padding-top>
+              <ion-icon name="help" slot="start"></ion-icon>
+              FAQ
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle autoHide="false">
+            <ion-item padding-top>
+              <ion-icon name="document" slot="start"></ion-icon>
+              Terms and Privacy
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle autoHide="false">
+            <ion-item padding-top>
+              <ion-icon name="mail" slot="start"></ion-icon>
+              Invite Friends
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle autoHide="false">
+            <ion-item padding-top>
+              <ion-icon name="log-out" slot="start"></ion-icon>
+              Sign Out
+            </ion-item>
+          </ion-menu-toggle>
+
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+
+
+</ion-app>

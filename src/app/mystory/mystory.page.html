@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons padding-end slot="start">
+      <img src="../../../assets/imgs/SystemIcons/arrow_back.svg" class="default-icon" [routerLink]="['/tab/home']"
+        routerLinkActive="router-link-active" margin-start />
+    </ion-buttons>
+    <ion-title slot="start">My Story</ion-title>
+  </ion-toolbar>
+  <ion-segment (ionChange)="onFilterUpdate($event)" mode="md">
+    <ion-segment-button value="details" checked>
+      <ion-label class="subtext">Events Hosted</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="media">
+        <ion-label class="subtext">Events Volunteered</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content>
+  
+  <div style="margin-top:5px;margin-left:5px ;">
+    <ion-label class="subtext" style="font-size: 15px; margin-left:8px;">Events</ion-label>
+  </div>
+
+
+  <ion-list *ngFor='let event of events' class="no-padding">
+    <div [routerLink]="['/events/',event.id]" routerLinkActive="router-link-active" margin-start>
+      <ion-grid justify-content="center" class="no-padding" style="margin-top:5px">
+
+
+        <ion-row>
+          <ion-col size="2">
+            <ion-avatar align-items="center" style="height: 55px;width:55px">
+              <img src="https://picsum.photos/100" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col size="6" size-md="6" margin-start align-items="center" style="margin-top: 5px;">
+            <p class="subtitle">{{  event.name  }}<br>
+              <span class="subtext">{{ event.category}}
+                <ion-icon name="{{event.scope}}"></ion-icon>
+              </span></p>
+          </ion-col>
+          <ion-col size="2">
+            <circle-progress [percent]="20" [title]="['3/15','Joined']"></circle-progress>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="no-padding">
+          <ion-col>
+            <p class="info">
+              <img src="../../assets/imgs/SystemIcons/calendar.svg" class="small-icon" />
+              <span margin-start></span>
+              {{ event.date }}
+            </p>
+            <p class="info">
+              <img src="../../assets/imgs/SystemIcons/person (user).svg" class="small-icon" />
+              <span margin-start></span>
+              {{ event.head }}
+            </p>
+            <p class="info">
+              <img src="../../assets/imgs/SystemIcons/location.svg" class="small-icon" />
+              <span margin-start></span>
+              {{ event.location }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="no-padding borders">
+      <ion-grid class="no-padding">
+        <ion-row>
+          <ion-col offset="1">
+            <img src="../../assets/imgs/SystemIcons/share.svg" class="default-icon" />
+          </ion-col>
+          <ion-col offset="2">
+            <img src="../../assets/imgs/SystemIcons/star border.svg" class="default-icon" />
+          </ion-col>
+          <ion-col offset="2">
+            <img src="../../assets/imgs/SystemIcons/public event.svg" class="default-icon" />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-list>
+
+</ion-content>

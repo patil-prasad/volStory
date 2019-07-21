@@ -1,0 +1,8 @@
+{
+  "name": "VolStory",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

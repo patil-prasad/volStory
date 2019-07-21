@@ -1,0 +1,137 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-buttons padding-end>
+        <img src="../../../assets/imgs/SystemIcons/arrow_back.svg" class="default-icon" (click)=onClickAlert() margin-start/>
+      </ion-buttons>
+    </ion-buttons>
+    <h4>{{ event.name}}</h4>
+    <ion-buttons slot="end">
+      <img src="../../../assets/imgs/SystemIcons/share.svg" class="default-icon"/>
+      <img src="../../../assets/imgs/SystemIcons/more(3 dots).svg" class="default-icon" margin-start/>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <img src="https://picsum.photos/100" />
+  <ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2">
+          <strong>10<br>Jul</strong>
+        </ion-col>
+        <ion-col size="10">
+          <strong>{{ event.name }}</strong><br>
+          <small>{{ event.category}} <ion-icon name="{{ event.scope}}"></ion-icon></small>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col margin>
+          <p>
+            <ion-icon name="person"></ion-icon>
+            {{ event.head}}
+          </p>
+          <p>
+            <ion-icon name="calendar"></ion-icon>
+            {{ event.date}}
+          </p>
+          <p>
+            <ion-icon name="alarm"></ion-icon>
+            10pm to 12pm
+          </p>
+          <p>
+            <ion-icon name="pin"></ion-icon>
+            {{ event.location}}
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-text>Facilities</ion-text>
+      <ion-row>
+        <ion-col>
+      <img src="../../../assets/imgs/SystemIcons/certificate.svg" class="default-icon secondary" margin-start/><br>
+          <small>Certificate</small>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-list>
+    <ion-list-header (click)="onDropDown()">
+      <ion-text>Required Skills</ion-text>
+      <ion-icon name="arrow-dropdown" size="large" margin-start margin-end></ion-icon>
+    </ion-list-header>
+    <ion-item *ngIf="showSkill">
+      <div>
+        <ion-text *ngFor="let skill of event.skills">
+          <ion-chip>{{skill}}</ion-chip>
+        </ion-text>
+      </div>
+
+    </ion-item>
+  </ion-list>
+
+  <!-- Segment Description -->
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-segment (ionChange)="onFilterUpdate($event)" padding-bottom>
+            <ion-segment-button value="details" checked>
+              Details
+            </ion-segment-button>
+            <ion-segment-button value="media">
+              Photos & Videos
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <strong style="margin:5px">Description</strong>
+          <br>
+          <ion-text style="margin: 10px">{{event.description}}</ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <!-- Comments -->
+  <ion-item>
+    <ion-avatar>
+      <ion-img src="https://picsum.photos/100"></ion-img>
+    </ion-avatar>
+
+    <p padding>
+      <strong>Person name</strong>
+      <br>
+      This is his comment</p>
+
+
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Add a Comment" tyep="text"></ion-input>
+    <ion-icon name="send"></ion-icon>
+  </ion-item>
+
+  <!-- Buttons -->
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-button class="footer-buttons" slot="start" expand="full">
+      <ion-text>
+        <h5>JOIN</h5>
+      </ion-text>
+    </ion-button>
+    <ion-button expand="full" style="height:100%;box-shadow: 0px">
+      <ion-text>
+        <h5>INTERESTED</h5>
+      </ion-text>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

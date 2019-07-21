@@ -1,0 +1,407 @@
+<ion-header>
+  <ion-toolbar *ngIf=' !find'>
+    <ion-buttons slot="start">
+      <ion-menu-button menuId="side"></ion-menu-button>
+    </ion-buttons>
+    <ion-title slot="start" >Volstory</ion-title>
+    <ion-buttons slot="end" >
+      <!-- Search icon -->
+      <img src="../../assets/imgs/SystemIcons/search.svg" class="default-icon" (click)="setSearch()" />
+      <!-- Filter -->
+      <img src="../../assets/imgs/SystemIcons/filter.svg" class="default-icon" margin-start margin-end (click)="filterEvents()" />
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Searchbar -->
+  <ion-item *ngIf='find'>
+      <img src="../../assets/imgs/SystemIcons/arrow_back.svg" class="default-icon" (click)="setSearch()"/>
+      <ion-input></ion-input>
+  </ion-item>
+  
+</ion-header>
+
+<!-- <ion-content *ngIf='pressed'>
+
+          <ion-segment [(ngModel)]="filter">
+              <ion-segment-button value="Time" checked>
+                  Time
+              </ion-segment-button>
+              <ion-segment-button value="Location">
+                  Location
+              </ion-segment-button>
+              <ion-segment-button value="Category">
+                  Category
+              </ion-segment-button>
+          </ion-segment>
+  
+         
+      <div [ngSwitch]="filter" class="len">
+          <ion-list *ngSwitchCase="'Time'">
+              <ion-item lines="none" >
+                  <label class="container">Tomorrow
+                      <input type="checkbox"  value="tomorrow">
+                      <span class="checkmark"></span>
+                  </label>
+              </ion-item>
+              <ion-item lines="none">
+                  <label class="container">Today
+                      <input type="checkbox"  value="today">
+                      <span class="checkmark"></span>
+                  </label>
+              </ion-item>
+              <ion-item lines="none">
+                  <label class="container">This Weekend
+                      <input type="checkbox"  value="thisweekend">
+                      <span class="checkmark"></span>
+                  </label>
+              </ion-item>
+              <ion-item lines="none">
+                  <label class="container">This Weekend
+                      <input type="checkbox"  value="thisweekend">
+                      <span class="checkmark"></span>
+                  </label>
+              </ion-item> 
+              <ion-item lines="none">
+                  <label class="container">This Month
+                      <input type="checkbox"  value="thismonth">
+                      <span class="checkmark"></span>
+                  </label>
+              </ion-item>   
+          </ion-list>
+  
+          <ion-list *ngSwitchCase="'Location'">
+              <ion-item lines="none">
+                  <ion-label class="titl">
+                      <b>City</b>
+                  </ion-label>
+              </ion-item>
+              <ion-item >
+                  <ion-label></ion-label>
+                  <ion-select [(ngModel)]="Category">
+                      <ion-select-option value="nes">Child Education</ion-select-option>
+                      <ion-select-option value="n64">Environment </ion-select-option>
+                      <ion-select-option value="ps">Animal care</ion-select-option>
+                      <ion-select-option value="genesis">Spiritual</ion-select-option>
+                      <ion-select-option value="saturn">Charity</ion-select-option>
+                      <ion-select-option value="snes">Cultural</ion-select-option>
+                  </ion-select>
+              </ion-item>
+              <ion-item lines="none">
+                  <ion-label class="titl">
+                      <b> Area</b>
+                  </ion-label>
+              </ion-item>
+              
+              <ion-item>
+                  <ion-label></ion-label>
+                  <ion-select [(ngModel)]="Category">
+                      <ion-select-option value="nes">Child Education</ion-select-option>
+                      <ion-select-option value="n64">Environment </ion-select-option>
+                      <ion-select-option value="ps">Animal care</ion-select-option>
+                      <ion-select-option value="genesis">Spiritual</ion-select-option>
+                      <ion-select-option value="saturn">Charity</ion-select-option>
+                      <ion-select-option value="snes">Cultural</ion-select-option>
+                  </ion-select>
+              </ion-item>
+          </ion-list>
+  <div class="categoryhght">
+          <ion-list *ngSwitchCase="'Category'">
+              <ion-item lines="none" class="itemht">
+                      <img class="default-icon" src="assets/imgs/category- all categories.svg" item-start>
+                      <label class="container">
+                              All Category
+                              <input type="checkbox"  value="thismonth">
+                              <span class="checkmark"></span>
+                          </label>
+              </ion-item>
+              <ion-item lines="none" class="itemht">
+                      <img class="default-icon" src="assets/imgs/Category-Animal Welfare.svg" item-start>
+                      <div *ngFor="let it of its">
+                      <img class="category" [src]="it.profileimage" ></div>
+                      <label class="container">
+                              Animal Welfare
+                              <input type="checkbox"  value="thismonth">
+                              <span class="checkmark"></span>
+                          </label>
+              </ion-item>
+              <ion-item lines="none" class="itemht">
+                      <img class="default-icon" src="assets/imgs/category- special need.svg" item-start>
+                      <label class="container">
+                              Special Needs
+                              <input type="checkbox"  value="thismonth">
+                              <span class="checkmark"></span>
+                          </label>
+              </ion-item>
+              <ion-item lines="none" class="itemht">
+                      <img class="default-icon" src="assets/imgs/Category-Education.svg" item-start>
+                      <label class="container">
+                              Education
+                              <input type="checkbox"  value="thismonth">
+                              <span class="checkmark"></span>
+                          </label>
+              </ion-item>
+              <ion-item lines="none" class="itemht">
+                      <img class="default-icon" src="assets/imgs/category- health and fitness.svg" item-start>
+                      <label class="container">
+                              Health & Fitness
+                              <input type="checkbox"  value="thismonth">
+                              <span class="checkmark"></span>
+                          </label>
+              </ion-item>
+              <ion-item lines="none" class="itemht">
+                      <img class="default-icon" src="assets/imgs/Category-Cultural.svg" item-start>
+                      <label class="container">
+                              Cultural
+                              <input type="checkbox"  value="thismonth">
+                              <span class="checkmark"></span>
+                          </label>
+              </ion-item>
+              <ion-item lines="none" class="itemht">
+                      <img class="default-icon" src="assets/imgs/category - spiritual.svg" item-start>
+                      <label class="container">
+                              Sppiritual
+                              <input type="checkbox"  value="thismonth">
+                              <span class="checkmark"></span>
+                          </label>
+              </ion-item>
+              <ion-item lines="none" class="itemht">
+                      <img class="default-icon" src="assets/imgs/category - safety.svg" item-start>
+                      <label class="container">
+                              Safety
+                              <input type="checkbox"  value="thismonth">
+                              <span class="checkmark"></span>
+                          </label>
+              </ion-item>
+          </ion-list>
+      </div>
+          
+         
+          
+      </div>
+      <button class="done" clear (click)="done()" full ion-button>DONE</button>
+      <div class="my-overlay" [hidden]="overlayHidden"></div>
+
+
+</ion-content> -->
+
+
+<div *ngIf="filter">
+<ion-segment (ionChange)="filterMenuSelection($event)">
+  <ion-segment-button value="time" checked>
+    <ion-label>Time</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="location">
+      <ion-label>Location</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="category">
+        <ion-label>Category</ion-label>
+      </ion-segment-button>
+</ion-segment>
+<ion-list *ngIf='filterMenu === "time"'>
+    <ion-item lines="none" >
+        <label class="container">Tomorrow
+            
+        </label>
+    </ion-item>
+    <ion-item lines="none">
+        <label class="container">Today
+            
+        </label>
+    </ion-item>
+    <ion-item lines="none">
+        <label class="container">This Weekend
+            
+        </label>
+    </ion-item>
+    <ion-item lines="none">
+        <label class="container">This Weekend
+            
+        </label>
+    </ion-item> 
+    <ion-item lines="none">
+        <label class="container">This Month
+            
+        </label>
+    </ion-item>
+</ion-list>
+
+
+<ion-list *ngIf='filterMenu === "location"'>
+    <ion-item lines="none">
+        <ion-label class="titl">
+            <b>City</b>
+        </ion-label>
+    </ion-item>
+    <ion-item >
+        <ion-label></ion-label>
+        <ion-select [(ngModel)]="Category">
+            <ion-select-option value="nes">Child Education</ion-select-option>
+            <ion-select-option value="n64">Environment </ion-select-option>
+            <ion-select-option value="ps">Animal care</ion-select-option>
+            <ion-select-option value="genesis">Spiritual</ion-select-option>
+            <ion-select-option value="saturn">Charity</ion-select-option>
+            <ion-select-option value="snes">Cultural</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+        <ion-label class="titl">
+            <b> Area</b>
+        </ion-label>
+    </ion-item>
+    
+    <ion-item>
+        <ion-label></ion-label>
+        <ion-select [(ngModel)]="Category">
+            <ion-select-option value="nes">Child Education</ion-select-option>
+            <ion-select-option value="n64">Environment </ion-select-option>
+            <ion-select-option value="ps">Animal care</ion-select-option>
+            <ion-select-option value="genesis">Spiritual</ion-select-option>
+            <ion-select-option value="saturn">Charity</ion-select-option>
+            <ion-select-option value="snes">Cultural</ion-select-option>
+        </ion-select>
+    </ion-item>
+</ion-list>
+
+<ion-list *ngIf='filterMenu === "category"'>
+    <ion-item lines="none" class="itemht">
+            <img class="filter-icon" src="../../assets/imgs/category- all categories.svg" item-start margin-end>
+            <label class="container">
+                    All Category
+                    
+                </label>
+    </ion-item>
+    <ion-item lines="none" class="itemht">
+            <img class="filter-icon" src="../../assets/imgs/Category-Animal Welfare.svg" item-start margin-end>
+            <div *ngFor="let it of its">
+            <img class="category" [src]="it.profileimage" ></div>
+            <label class="container">
+                    Animal Welfare
+                    
+                </label>
+    </ion-item>
+    <ion-item lines="none" class="itemht">
+            <img class="filter-icon" src="../../assets/imgs/category- special need.svg" item-start margin-end>
+            <label class="container">
+                    Special Needs
+                    
+                </label>
+    </ion-item>
+    <ion-item lines="none" class="itemht">
+            <img class="filter-icon" src="../../assets/imgs/Category-Education.svg" item-start margin-end>
+            <label class="container">
+                    Education
+                    
+                </label>
+    </ion-item>
+    <ion-item lines="none" class="itemht">
+            <img class="filter-icon" src="../../assets/imgs/category- health and fitness.svg" item-start margin-end>
+            <label class="container">
+                    Health & Fitness
+                    
+                </label>
+    </ion-item>
+    <ion-item lines="none" class="itemht">
+            <img class="filter-icon" src="../../assets/imgs/Category-Cultural.svg" item-start margin-end>
+            <label class="container">
+                    Cultural
+                    
+                </label>
+    </ion-item>
+    <ion-item lines="none" class="itemht">
+            <img class="filter-icon" src="../../assets/imgs/category - spiritual.svg" item-start margin-end>
+            <label class="container">
+                    Spiritual
+                    
+                </label>
+    </ion-item>
+    <ion-item lines="none" class="itemht">
+            <img class="filter-icon" src="../../assets/imgs/category - safety.svg" item-start margin-end>
+            <label class="container">
+                    Safety
+                </label>
+    </ion-item>
+</ion-list>
+
+
+<ion-button expand="full" (click)="done()">DONE</ion-button>
+</div>
+
+<!-- Main Content -->
+<ion-content [scrollY]=!filter class="eventsoverlay">
+
+  <div style="padding-top:5px;padding-left:5px ;" [ngClass]="cssClass">
+    <ion-label class="subtext" style="font-size: 15px; margin-left:8px;">Events</ion-label>
+  </div>
+
+
+  <ion-list *ngFor='let event of events' class="no-padding" [ngClass]="cssClass">
+    <div [routerLink]="filter?'':['/events/',event.id]" routerLinkActive="router-link-active" 
+     padding-start>
+      <ion-grid justify-content="center" class="no-padding" style="margin-top:5px">
+
+
+        <ion-row>
+          <ion-col size="2">
+            <ion-avatar align-items="center" style="height: 55px;width:55px">
+              <img src="https://picsum.photos/100" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col size="6" size-md="6" margin-start align-items="center" style="margin-top: 5px;">
+            <p class="subtitle">{{  event.name  }}<br>
+              <span class="subtext">{{ event.category}}
+                <ion-icon name="{{event.scope}}"></ion-icon>
+              </span></p>
+          </ion-col>
+          <ion-col size="2">
+            <circle-progress
+              [percent]="20"
+              [title]="['3/15','Joined']"
+            ></circle-progress>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="no-padding">
+          <ion-col>
+            <p class="info">
+              <img src="../../assets/imgs/SystemIcons/calendar.svg" class="small-icon" />
+              <span margin-start></span>
+              {{ event.date }}
+            </p>
+            <p class="info">
+              <img src="../../assets/imgs/SystemIcons/person (user).svg" class="small-icon" />
+              <span margin-start></span>
+              {{ event.head }}
+            </p>
+            <p class="info">
+              <img src="../../assets/imgs/SystemIcons/location.svg" class="small-icon" />
+              <span margin-start></span>
+              {{ event.location }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="no-padding borders">
+      <ion-grid class="no-padding">
+        <ion-row>
+          <ion-col offset="1">
+            <img src="../../assets/imgs/SystemIcons/share.svg" class="default-icon" />
+          </ion-col>
+          <ion-col offset="2">
+            <img src="../../assets/imgs/SystemIcons/star border.svg" class="default-icon" />
+          </ion-col>
+          <ion-col offset="2">
+            <img src="../../assets/imgs/SystemIcons/person (user).svg" class="default-icon" />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="secondary" [disabled]= filter>
+      <ion-icon name="add" size="large" (click)="createEvent()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+ </ion-content>
