@@ -78,3 +78,9 @@ ion-list {
     z-index:-1;
     opacity: .3;
 }
+
+.filter-container {
+    height:auto;
+    max-height: 75%;
+    z-index: 4;
+}

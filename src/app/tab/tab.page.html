@@ -1,20 +1,27 @@
 <ion-content>
   <ion-tabs>
-    <ion-tab-bar slot="bottom" color="primary">
-      <ion-tab-button tab="home">
-        <ion-icon name="home"></ion-icon>
+    <ion-tab-bar slot="bottom" color="primary"  >
+      <ion-tab-button tab="home" (click)="getTab('home')">
+        <img src="../../assets/imgs/SystemIcons/home.svg" class="default-icon" *ngIf=!home/>
+        <img src="../../assets/imgs/SystemIcons/home filled.svg" class="default-icon" *ngIf=home/>
       </ion-tab-button>
 
-      <ion-tab-button tab="mystory">
-        <ion-icon name="book"></ion-icon>
+      <ion-tab-button tab="mystory" (click)="getTab('mystory')">
+          <img src="../../assets/imgs/SystemIcons/host and profile.svg" class="default-icon" *ngIf=!mystory/>
+          <img src="../../assets/imgs/SystemIcons/invite friends.svg" class="default-icon" *ngIf=mystory/>
+
       </ion-tab-button>
 
-      <ion-tab-button tab="notifications">
-        <ion-icon name="notifications"></ion-icon>
+      <ion-tab-button tab="notifications" (click)="getTab('notifications')">
+          <img src="../../assets/imgs/SystemIcons/notification.svg" class="default-icon" *ngIf=!notification />
+          <img src="../../assets/imgs/SystemIcons/Birthday cake.svg" class="default-icon" *ngIf=notification />
+
       </ion-tab-button>
 
-      <ion-tab-button tab="profile">
-        <ion-icon name="person"></ion-icon>
+      <ion-tab-button tab="profile" (click)="getTab('profile')">
+          <img src="../../assets/imgs/SystemIcons/person (user).svg" class="default-icon" *ngIf=!profile/>
+          <img src="../../assets/imgs/SystemIcons/terms and privacy.svg" class="default-icon" *ngIf=profile/>
+
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>

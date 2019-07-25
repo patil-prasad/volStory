@@ -1,23 +1,30 @@
 <ion-header>
-  <ion-toolbar *ngIf=' !find'>
+  <ion-toolbar *ngIf=' !find && !filter'>
     <ion-buttons slot="start">
       <ion-menu-button menuId="side"></ion-menu-button>
     </ion-buttons>
-    <ion-title slot="start" >Volstory</ion-title>
-    <ion-buttons slot="end" >
+    <ion-title slot="start">Volstory</ion-title>
+    <ion-buttons slot="end">
       <!-- Search icon -->
       <img src="../../assets/imgs/SystemIcons/search.svg" class="default-icon" (click)="setSearch()" />
-      <!-- Filter -->
-      <img src="../../assets/imgs/SystemIcons/filter.svg" class="default-icon" margin-start margin-end (click)="filterEvents()" />
+      <!-- Filter icon-->
+      <img src="../../assets/imgs/SystemIcons/filter.svg" class="default-icon" margin-start margin-end
+        (click)="filterEvents()" />
     </ion-buttons>
   </ion-toolbar>
 
-  <!-- Searchbar -->
+  <!-- Searchbar when search is active -->
   <ion-item *ngIf='find'>
-      <img src="../../assets/imgs/SystemIcons/arrow_back.svg" class="default-icon" (click)="setSearch()"/>
-      <ion-input></ion-input>
+    <img src="../../assets/imgs/SystemIcons/arrow_back.svg" class="default-icon" (click)="setSearch()" />
+    <ion-input></ion-input>
   </ion-item>
-  
+
+  <!-- Toolbar when filter is active -->
+  <ion-toolbar *ngIf="filter">
+    <img src="../../assets/imgs/SystemIcons/arrow_back.svg" class="small-icon" (click)=filterEvents() margin-end />
+
+    <ion-label><b>Filter</b></ion-label>
+  </ion-toolbar>
 </ion-header>
 
 <!-- <ion-content *ngIf='pressed'>
@@ -184,159 +191,183 @@
 
 </ion-content> -->
 
-
-<div *ngIf="filter">
-<ion-segment (ionChange)="filterMenuSelection($event)">
-  <ion-segment-button value="time" checked>
-    <ion-label>Time</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="location">
+<!-- ********************************************Filter Modal***************************************************** -->
+<div *ngIf="filter" class="filter-container">
+  <ion-segment (ionChange)="filterMenuSelection($event)" mode="md">
+    <ion-segment-button value="time" checked>
+      <ion-label>Time</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="location">
       <ion-label>Location</ion-label>
     </ion-segment-button>
     <ion-segment-button value="category">
-        <ion-label>Category</ion-label>
-      </ion-segment-button>
-</ion-segment>
-<ion-list *ngIf='filterMenu === "time"'>
-    <ion-item lines="none" >
+      <ion-label>Category</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div *ngIf='filterMenu === "time"'>
+    <ion-list mode="md">
+      <ion-item lines="none">
         <label class="container">Tomorrow
-            
+
         </label>
-    </ion-item>
-    <ion-item lines="none">
+      </ion-item>
+    </ion-list>
+    <ion-list mode="md">
+      <ion-item lines="none">
         <label class="container">Today
-            
+
         </label>
-    </ion-item>
-    <ion-item lines="none">
+      </ion-item>
+    </ion-list>
+    <ion-list mode="md">
+      <ion-item lines="none">
         <label class="container">This Weekend
-            
+
         </label>
-    </ion-item>
-    <ion-item lines="none">
+      </ion-item>
+    </ion-list>
+    <ion-list mode="md">
+      <ion-item lines="none">
         <label class="container">This Weekend
-            
+
         </label>
-    </ion-item> 
-    <ion-item lines="none">
+      </ion-item>
+    </ion-list>
+    <ion-list mode="md">
+      <ion-item lines="none">
         <label class="container">This Month
-            
+
         </label>
-    </ion-item>
-</ion-list>
+      </ion-item>
+    </ion-list>
+  </div>
 
-
-<ion-list *ngIf='filterMenu === "location"'>
+<div *ngIf='filterMenu === "location"'>
+  <ion-list  mode="md">
     <ion-item lines="none">
-        <ion-label class="titl">
-            <b>City</b>
-        </ion-label>
+      <ion-label>
+        <b>City</b>
+      </ion-label>
     </ion-item>
-    <ion-item >
-        <ion-label></ion-label>
-        <ion-select [(ngModel)]="Category">
-            <ion-select-option value="nes">Child Education</ion-select-option>
-            <ion-select-option value="n64">Environment </ion-select-option>
-            <ion-select-option value="ps">Animal care</ion-select-option>
-            <ion-select-option value="genesis">Spiritual</ion-select-option>
-            <ion-select-option value="saturn">Charity</ion-select-option>
-            <ion-select-option value="snes">Cultural</ion-select-option>
-        </ion-select>
-    </ion-item>
-    <ion-item lines="none">
-        <ion-label class="titl">
-            <b> Area</b>
-        </ion-label>
-    </ion-item>
-    
     <ion-item>
-        <ion-label></ion-label>
-        <ion-select [(ngModel)]="Category">
-            <ion-select-option value="nes">Child Education</ion-select-option>
-            <ion-select-option value="n64">Environment </ion-select-option>
-            <ion-select-option value="ps">Animal care</ion-select-option>
-            <ion-select-option value="genesis">Spiritual</ion-select-option>
-            <ion-select-option value="saturn">Charity</ion-select-option>
-            <ion-select-option value="snes">Cultural</ion-select-option>
-        </ion-select>
+      <ion-label></ion-label>
+      <ion-select [(ngModel)]="Category">
+        <ion-select-option value="nes">Child Education</ion-select-option>
+        <ion-select-option value="n64">Environment </ion-select-option>
+        <ion-select-option value="ps">Animal care</ion-select-option>
+        <ion-select-option value="genesis">Spiritual</ion-select-option>
+        <ion-select-option value="saturn">Charity</ion-select-option>
+        <ion-select-option value="snes">Cultural</ion-select-option>
+      </ion-select>
     </ion-item>
-</ion-list>
-
-<ion-list *ngIf='filterMenu === "category"'>
-    <ion-item lines="none" class="itemht">
-            <img class="filter-icon" src="../../assets/imgs/category- all categories.svg" item-start margin-end>
-            <label class="container">
-                    All Category
-                    
-                </label>
+    <ion-item lines="none">
+      <ion-label class="titl">
+        <b> Area</b>
+      </ion-label>
     </ion-item>
-    <ion-item lines="none" class="itemht">
-            <img class="filter-icon" src="../../assets/imgs/Category-Animal Welfare.svg" item-start margin-end>
-            <div *ngFor="let it of its">
-            <img class="category" [src]="it.profileimage" ></div>
-            <label class="container">
-                    Animal Welfare
-                    
-                </label>
+  </ion-list><ion-list mode="md">
+    <ion-item>
+      <ion-label></ion-label>
+      <ion-select [(ngModel)]="Category">
+        <ion-select-option value="nes">Child Education</ion-select-option>
+        <ion-select-option value="n64">Environment </ion-select-option>
+        <ion-select-option value="ps">Animal care</ion-select-option>
+        <ion-select-option value="genesis">Spiritual</ion-select-option>
+        <ion-select-option value="saturn">Charity</ion-select-option>
+        <ion-select-option value="snes">Cultural</ion-select-option>
+      </ion-select>
     </ion-item>
-    <ion-item lines="none" class="itemht">
-            <img class="filter-icon" src="../../assets/imgs/category- special need.svg" item-start margin-end>
-            <label class="container">
-                    Special Needs
-                    
-                </label>
-    </ion-item>
-    <ion-item lines="none" class="itemht">
-            <img class="filter-icon" src="../../assets/imgs/Category-Education.svg" item-start margin-end>
-            <label class="container">
-                    Education
-                    
-                </label>
-    </ion-item>
-    <ion-item lines="none" class="itemht">
-            <img class="filter-icon" src="../../assets/imgs/category- health and fitness.svg" item-start margin-end>
-            <label class="container">
-                    Health & Fitness
-                    
-                </label>
-    </ion-item>
-    <ion-item lines="none" class="itemht">
-            <img class="filter-icon" src="../../assets/imgs/Category-Cultural.svg" item-start margin-end>
-            <label class="container">
-                    Cultural
-                    
-                </label>
-    </ion-item>
-    <ion-item lines="none" class="itemht">
-            <img class="filter-icon" src="../../assets/imgs/category - spiritual.svg" item-start margin-end>
-            <label class="container">
-                    Spiritual
-                    
-                </label>
-    </ion-item>
-    <ion-item lines="none" class="itemht">
-            <img class="filter-icon" src="../../assets/imgs/category - safety.svg" item-start margin-end>
-            <label class="container">
-                    Safety
-                </label>
-    </ion-item>
-</ion-list>
-
-
-<ion-button expand="full" (click)="done()">DONE</ion-button>
+  </ion-list>
 </div>
 
-<!-- Main Content -->
-<ion-content [scrollY]=!filter class="eventsoverlay">
+<div  *ngIf='filterMenu === "category"'>
+  <ion-list mode="md">
+    <ion-item lines="none" class="itemht">
+      <img class="filter-icon" src="../../assets/imgs/category- all categories.svg" item-start margin-end>
+      <label class="container">
+        All Category
+
+      </label>
+    </ion-item>
+  </ion-list><ion-list mode="md">
+    <ion-item lines="none" class="itemht">
+      <img class="filter-icon" src="../../assets/imgs/Category-Animal Welfare.svg" item-start margin-end>
+      <div *ngFor="let it of its">
+        <img class="category" [src]="it.profileimage"></div>
+      <label class="container">
+        Animal Welfare
+
+      </label>
+    </ion-item>
+  </ion-list><ion-list mode="md">
+
+    <ion-item lines="none" class="itemht">
+      <img class="filter-icon" src="../../assets/imgs/category- special need.svg" item-start margin-end>
+      <label class="container">
+        Special Needs
+
+      </label>
+    </ion-item>
+  </ion-list><ion-list mode="md">
+
+    <ion-item lines="none" class="itemht">
+      <img class="filter-icon" src="../../assets/imgs/Category-Education.svg" item-start margin-end>
+      <label class="container">
+        Education
+
+      </label>
+    </ion-item>
+  </ion-list><ion-list mode="md">
+
+    <ion-item lines="none" class="itemht">
+      <img class="filter-icon" src="../../assets/imgs/category- health and fitness.svg" item-start margin-end>
+      <label class="container">
+        Health & Fitness
+
+      </label>
+    </ion-item>
+  </ion-list><ion-list mode="md">
+
+    <ion-item lines="none" class="itemht">
+      <img class="filter-icon" src="../../assets/imgs/Category-Cultural.svg" item-start margin-end>
+      <label class="container">
+        Cultural
+
+      </label>
+    </ion-item>
+  </ion-list><ion-list mode="md">
+
+    <ion-item lines="none" class="itemht">
+      <img class="filter-icon" src="../../assets/imgs/category - spiritual.svg" item-start margin-end>
+      <label class="container">
+        Spiritual
+
+      </label>
+    </ion-item>
+  </ion-list><ion-list mode="md">
+
+    <ion-item lines="none" class="itemht">
+      <img class="filter-icon" src="../../assets/imgs/category - safety.svg" item-start margin-end>
+      <label class="container">
+        Safety
+      </label>
+    </ion-item>
+  </ion-list>
+</div>
+
+  <ion-button expand="full" (click)="done()">DONE</ion-button>
+</div>
+
+<!-- **************************************************Main Content**************************************************************** -->
+<ion-content [scrollY]=!filter mode="md">
 
   <div style="padding-top:5px;padding-left:5px ;" [ngClass]="cssClass">
     <ion-label class="subtext" style="font-size: 15px; margin-left:8px;">Events</ion-label>
   </div>
 
 
-  <ion-list *ngFor='let event of events' class="no-padding" [ngClass]="cssClass">
-    <div [routerLink]="filter?'':['/events/',event.id]" routerLinkActive="router-link-active" 
-     padding-start>
+  <ion-list *ngFor='let event of events' class="no-padding" [ngClass]="cssClass" mode="md">
+    <div [routerLink]="filter?'':['/events/',event.id]" routerLinkActive="router-link-active" padding-start>
       <ion-grid justify-content="center" class="no-padding" style="margin-top:5px">
 
 
@@ -353,10 +384,7 @@
               </span></p>
           </ion-col>
           <ion-col size="2">
-            <circle-progress
-              [percent]="20"
-              [title]="['3/15','Joined']"
-            ></circle-progress>
+            <circle-progress [percent]="20" [title]="['3/15','Joined']"></circle-progress>
           </ion-col>
         </ion-row>
 
@@ -399,9 +427,9 @@
     </div>
   </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="secondary" [disabled]= filter>
+    <ion-fab-button color="secondary" [disabled]=filter>
       <ion-icon name="add" size="large" (click)="createEvent()"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  
- </ion-content>
+
+</ion-content>

@@ -1,12 +1,11 @@
 .profile-image{
-    height: 80px;
-    width: 80px;
-    border-radius:40px;
+    height: 90px;
+    width: 90px;
+    border-radius:45px;
     margin-top:20px
 }
 .followers {
     width: 80px;
-    margin: 0;
     font-size: 14px;
     text-align: center;
     font-family: "DroidSans" ;
@@ -14,13 +13,18 @@
 
 }
 
+.name {
+    font-size: 20px;
+    font-family:"DroidSans";
+    font-weight: 90;
+}
+
 .info{
     text-align: center;
     font-family: "DroidSans";
     font-size: 10px;
     color: #b2b2b2;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin-top:-20px;
 }
 
 .titl.label-md {
@@ -31,14 +35,22 @@
     text-align: center;
 }
 
-.no-padding{
-    padding:0;
-    margin:0
+.follow {
+    margin-top: 10px;
+    margin-bottom:10px;
+    border-right: 0.5px solid #b2b2b2;
+    height: 50px;
+    background-color:green;
+}
+
+.padding{
+    margin:15px
 }
 .e-detail{
     height: 20px;
     width:20px;
-    padding-right:3px
+    padding-right:3px;
+    margin-top:2px
 }
 
 .contact-text{
@@ -48,14 +60,48 @@
 }
 
 .detail {
-    padding-top: 8px;
+    margin-left: 10px;
 }
 
-.divide{
-    padding-top: 5%;            
+.divide{          
     border-bottom: 1px solid #b2b2b2  ;
     //min-height:2px;
     height: 1px;
     margin-left: 3.2%;
     margin-right:3.2% ;
+}
+
+.follow-icon {
+    margin-top:5px;
+    height:20px;
+    width:20px;
+}
+
+.follow-button {
+    background-color: #B8EFEC;
+    height: 60px;
+    margin:10px 0 10px 0;
+}
+
+ion-text {
+    padding:0%;
+    margin:0%;
+}
+ion-toggle {
+    height: 10px;
+    width: 20px;
+}
+
+ion-col {
+    padding: 0%;
+    margin: 0%;
+}
+
+ion-row {
+    padding: 0%;
+    margin: 0%;
+}
+ion-grid {
+    padding: 0%;
+    margin: 0%;
 }

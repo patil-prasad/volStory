@@ -57,7 +57,7 @@
       </ion-label>
     </div>
     <ion-item>
-      <ion-datetime displayFormat="DDD, MMM DD, YYYY HH:mm, A" placeholder="Day / Date / Time" [(ngModel)]="startDate">
+      <ion-datetime displayFormat="DDD, MMM DD, YYYY HH:mm, A" placeholder="Day / Date / Time" >
       </ion-datetime>
     </ion-item>
     <div class="item">
@@ -66,7 +66,7 @@
       </ion-label>
     </div>
     <ion-item>
-      <ion-datetime displayFormat="DDD, MMM DD, YYYY HH:mm, A" placeholder="Day / Date / Time" [(ngModel)]="endDate">
+      <ion-datetime displayFormat="DDD, MMM DD, YYYY HH:mm, A" placeholder="Day / Date / Time" >
       </ion-datetime>
     </ion-item>
     <div class="item">
@@ -75,7 +75,7 @@
       </ion-label>
     </div>
     <ion-item>
-      <ion-datetime displayFormat="DDD, MMM DD, YYYY HH:mm, A" placeholder="Day / Date" [(ngModel)]="lastJoinDate">
+      <ion-datetime displayFormat="DDD, MMM DD, YYYY HH:mm, A" placeholder="Day / Date" >
       </ion-datetime>
     </ion-item>
 
@@ -186,7 +186,7 @@
 </ion-content>
 <ion-footer>
   <ion-row>
-    <ion-button class="back" type="button">BACK</ion-button>
-    <ion-button type="submit" class="next"  (click)="next()" >NEXT</ion-button>
+    <ion-button class="back" type="button" expand="full">BACK</ion-button>
+    <ion-button type="submit" class="next"  (click)="next()" expand="full">NEXT</ion-button>
   </ion-row>
 </ion-footer>

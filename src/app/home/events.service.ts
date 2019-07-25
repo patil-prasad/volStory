@@ -32,7 +32,7 @@ export class EventsService {
     },
     {
       id: '102',
-      name: 'Pet Adoption Camp',
+      name: 'forge Camp',
       category: 'Animal welfare',
       scope: 'globe',
       date: '19-12-2013',

@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { EventDetailPage } from './event-detail.page';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 const routes: Routes = [
   {
@@ -19,7 +20,27 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    NgCircleProgressModule.forRoot({
+      maxPercent: 100,
+      radius: 20,
+      space: -3,
+      toFixed: 0,
+      backgroundPadding: 5,
+      outerStrokeWidth: 3,
+      outerStrokeColor: '#D8D8D8',
+      innerStrokeColor: '#FFFF',
+      titleColor: '#FFFF',
+      innerStrokeWidth: 3,
+      animateTitle: false,
+      animation: true,
+      animationDuration: 200,
+      showUnits: false,
+      showSubtitle: false,
+      titleFontSize: '10',
+      startFromZero: false,
+      lazy: false
+    })
   ],
   declarations: [EventDetailPage]
 })
