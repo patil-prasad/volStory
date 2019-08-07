@@ -22,7 +22,6 @@ import {
 import {
   NgCircleProgressModule
 } from 'ng-circle-progress';
-import { FilterComponent } from './filter/filter.component';
 
 const routes: Routes = [{
   path: '',
@@ -37,13 +36,13 @@ const routes: Routes = [{
     RouterModule.forChild(routes),
     NgCircleProgressModule.forRoot({
       maxPercent: 100,
-      radius: 20,
+      radius: 23,
       space: -4,
       toFixed: 0,
       backgroundPadding: 5,
       outerStrokeWidth: 4,
-      outerStrokeColor: '#C6F8F5',
-      innerStrokeColor: '#03756D',
+      outerStrokeColor: '#c5f8f4',
+      innerStrokeColor: '#03756c',
       innerStrokeWidth: 4,
       animateTitle: false,
       animation: true,
@@ -55,7 +54,6 @@ const routes: Routes = [{
       lazy: false
     })
   ],
-  entryComponents: [FilterComponent],
-  declarations: [HomePage, FilterComponent]
+  declarations: [HomePage]
 })
 export class HomePageModule { }

@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  Router
+} from '@angular/router';
+import {
+  NgForm
+} from '@angular/forms';
 
 @Component({
   selector: 'app-create-event',
@@ -8,11 +15,15 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./create-event.page.scss'],
 })
 export class CreateEventPage implements OnInit {
-progress = 0.333;
-  constructor(private router: Router) { }
+  progress = 0.666;
+  snack = false;
+  certificate = false;
+  meal = false;
+  money = false;
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    this.progress = 0.333;
+    this.progress = 0.666;
   }
 
   next() {
@@ -27,4 +38,27 @@ progress = 0.333;
     console.log(f);
   }
 
+
+  // for min max of no of volunteers
+  min = 0;
+  plusMin() {
+    this.min = this.min + 1;
+  }
+
+  // page 3
+
+
+
+  changeSnack() {
+      this.snack = !this.snack;
+    }
+    changeMeal() {
+      this.meal = !this.meal;
+    }
+    changeMoney() {
+      this.money = !this.money;
+    }
+    changeC() {
+      this.certificate = !this.certificate;
+    }
 }

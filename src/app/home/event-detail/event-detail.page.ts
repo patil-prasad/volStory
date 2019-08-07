@@ -4,8 +4,10 @@ import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 
 import { Event } from '../event.model';
 import { EventsService } from '../events.service';
-import { AlertController } from '@ionic/angular';
+import { AlertController, PopoverController } from '@ionic/angular';
 import { Route } from '@angular/compiler/src/core';
+import { HomePage } from '../home.page';
+import { PopmenuComponent } from './popmenu/popmenu.component';
 
 @Component({
   selector: 'app-event-detail',
@@ -21,7 +23,7 @@ export class EventDetailPage implements OnInit {
 
   // alaert controller
   // tslint:disable-next-line: max-line-length
-  constructor(private eventsService: EventsService, private activatedRoute: ActivatedRoute, private alertController: AlertController, private router: Router) { }
+  constructor(private eventsService: EventsService, private activatedRoute: ActivatedRoute, private alertController: AlertController, private router: Router, public popoverController: PopoverController) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap => {
@@ -64,5 +66,15 @@ export class EventDetailPage implements OnInit {
 
     await alert.present();
   }
+
+// popover
+async present(ev: any) {
+  const popover = await this.popoverController.create({
+    component: PopmenuComponent,
+    event: ev,
+    // translucent: true,
+  });
+  return await popover.present();
+}
 
 }

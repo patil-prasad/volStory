@@ -1,16 +1,21 @@
 .profile-image{
-    height: 90px;
-    width: 90px;
-    border-radius:45px;
-    margin-top:20px
+    height: 112px;
+    width: 112px;
+    border-radius:56px;
+    margin-top:12px
 }
 .followers {
     width: 80px;
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
     font-family: "DroidSans" ;
     opacity: 87% ;
 
+}
+
+.toggle {
+    height: 24px;
+    width: 24px;
 }
 
 .name {
@@ -27,13 +32,13 @@
     margin-top:-20px;
 }
 
-.titl.label-md {
-    margin: 1% 0% 0% 0%;
-    color:#212121;
-    font-family: "DroidSans";
-    font-size: 18px;
-    text-align: center;
-}
+// .titl.label-md {
+//     margin: 1% 0% 0% 0%;
+//     color:#212121;
+//     font-family: "DroidSans";
+//     font-size: 18px;
+//     text-align: center;
+// }
 
 .follow {
     margin-top: 10px;
@@ -47,16 +52,18 @@
     margin:15px
 }
 .e-detail{
-    height: 20px;
-    width:20px;
-    padding-right:3px;
-    margin-top:2px
+    height: 16px;
+    width:16px;
+    margin-right:3px;
+    // padding-top:2px;
 }
 
 .contact-text{
     font-size: 0.9em;
     padding-left: 5px;
-    padding-top: 2px
+    // padding-top: 2px;
+    font-family: "DroidSans";
+    font-size: 13px;
 }
 
 .detail {
@@ -86,6 +93,8 @@
 ion-text {
     padding:0%;
     margin:0%;
+    font-family: "DroidSans";
+    font-size: 13px;
 }
 ion-toggle {
     height: 10px;
@@ -104,4 +113,88 @@ ion-row {
 ion-grid {
     padding: 0%;
     margin: 0%;
+}
+ion-label {
+    font-family: "DroidSans";
+    font-size: 13px;
+}
+
+.text {
+    font-family: "DroidSans";
+    font-size: 13px;
+}
+
+ion-item.md ion-item.ios {
+    width:100%;
+    padding: 0px
+}
+
+.card-icon {
+    height: 24px;
+    width: 24px;
+    opacity: 87%;
+    padding-left: 2px;
+}
+
+.small-icon {
+    height:16px;
+    width:16px
+}
+.filter-icon {
+    height: 40px;
+    width: 40px;
+}
+.subtext{
+    font-size: 14px;
+    opacity: 60%;   
+    font-family: "DroidSans"; 
+    padding:0px
+   // line-height: 12.2px;     
+}
+
+.infoe{
+    font-size: 14px;
+    font-family: "DroidSans"; 
+    margin-left:10px
+   
+}
+p{
+    padding:0px;
+    margin-top: -5px
+}
+
+.subtitle{
+    margin:0 3px 18px;
+    font-size: 18px ;
+    margin: 0 0px 0px;
+    color:#212121;
+    font-family: "DroidSans";
+    font-weight: 100; //line-height: 24.2px;
+    padding:0px
+}
+.no-padding {
+    padding: 0px
+}
+.borders {
+    border-top: 0.5px solid ;
+    border-bottom: 0.5px solid;
+    border-color: gray;
+}
+ion-searchbar {
+    padding: 0
+}
+ion-row ion-col ion-grid {
+    padding: 0px;
+    margin:0px
+}
+
+label {
+    font-family: "DroidSans";
+    font-size: 14px;
+    margin: 0px;
+    padding:0px;
+}
+
+ion-list {
+    padding: 0px
 }

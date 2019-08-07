@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EventsService } from '../home/events.service';
+import {Event} from '../home/event.model';
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +11,16 @@ export class ProfilePage implements OnInit {
 phone = true;
 website = false;
 email = false;
-  constructor() { }
+
+showEh = false;
+showEv = false;
+showskll = false;
+showInterst = false;
+
+
+
+events: Event[] = this.eventService.getAllEvents();
+  constructor(private eventService: EventsService) {}
 
   ngOnInit() {
   }
@@ -24,5 +35,21 @@ websiteToggle() {
 emailToggle() {
   this.email = !this.email;
 }
+// Toggle lists
 
+showEV() {
+  this.showEv = !this.showEv;
+}
+
+showEH() {
+  this.showEh = !this.showEh;
+}
+
+showSkill() {
+  this.showskll = !this.showskll;
+}
+
+showInterest() {
+  this.showInterst = !this.showInterst;
+}
 }

@@ -1,7 +1,5 @@
 .box {
     width:90%;
-    margin-right: 5%;
-    margin-left: 5%;
     border: 1px solid #DDDDDD;
     font-size: 14px;
     font-family: "DroidSans";
@@ -19,22 +17,15 @@ ion-label.md{
     // max-height: 40px; 
 // }
 ion-label.ios{
-    margin: 12px 0px 0px 15px;
     color:black;
     font-family: "DroidSans";
     font-size: 14px;
 }
-ion-item.md {
+ion-item {
     padding: 0px 0px 0px 0px;
     min-height: 20px;
     font-size: 14px;
-    margin:0px;
-}
-ion-item.ios {
-    padding: 0 0 0 0 ;
-    min-height: 20px;
-    font-size: 14px;
-    margin:0px
+    margin:0px 0px 0px 0px;
 }
 .back {
     border-radius: 0px;
@@ -53,11 +44,14 @@ ion-item.ios {
     margin-bottom: 0px;
     margin-top: 0px;
     position: fixed;
+    z-index: 5;
+
 }
 .next {
     border-radius: 0px;
     //overflow: hidden;
   //  outline-color: #212121;
+    z-index: 5;
     font-family: "DroidSans";
     height: 40px;
     width: 50%;
@@ -91,4 +85,17 @@ ion-chip.md {
 .add-media {
     border-top: 1px solid #212121;border-bottom: 1px solid #212121;margin-top: 15px; padding: 2px;text-align: center;
     padding-bottom: 5px;
+}
+
+.form-icon {
+    height: 16px;
+    width: 16px;
+}
+
+.divide {
+    border-bottom: 1px solid #D8D8D8;
+    padding: 0px;
+    width: 100%; 
+    font-family: "DroidSans";
+    font-size: 14px;
 }

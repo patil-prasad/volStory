@@ -14,9 +14,6 @@ import {
 import {
   ModalController
 } from '@ionic/angular';
-import {
-  FilterComponent
-} from '../home/filter/filter.component';
 import { SegmentChangeEventDetail } from '@ionic/core';
 
 
@@ -27,6 +24,8 @@ import { SegmentChangeEventDetail } from '@ionic/core';
 })
 export class HomePage {
   find = false;
+  // for starring an event
+  star = false;
   // for fitering
   filter = false;
   cssClass = '';
@@ -66,7 +65,10 @@ export class HomePage {
   setSearch() {
     this.find = !this.find;
   }
-
+// star event
+  starEvent() {
+    this.star = ! this.star;
+  }
   }
 
 

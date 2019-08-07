@@ -11,7 +11,9 @@ const routes: Routes = [
   { path: 'events/:EventId', loadChildren: './home/event-detail/event-detail.module#EventDetailPageModule' },
   { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule' },
   { path: 'createEvent', loadChildren: './home/create-event/create-event.module#CreateEventPageModule' },
-  { path: 'list', loadChildren: './list/list.module#ListPageModule' }
+  { path: 'list', loadChildren: './list/list.module#ListPageModule' },
+  // it must be set as child to edit in porfile page
+  { path: 'edit', loadChildren: './profile/edit-profile/edit-profile.module#EditProfilePageModule' }
 ];
 
 @NgModule({

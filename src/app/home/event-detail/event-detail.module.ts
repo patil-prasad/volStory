@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { EventDetailPage } from './event-detail.page';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { PopmenuComponent } from './popmenu/popmenu.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,7 @@ const routes: Routes = [
       lazy: false
     })
   ],
-  declarations: [EventDetailPage]
+  entryComponents: [PopmenuComponent],
+  declarations: [EventDetailPage, PopmenuComponent]
 })
 export class EventDetailPageModule {}

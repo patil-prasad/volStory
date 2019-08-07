@@ -2,7 +2,7 @@
   <ion-split-pane when="md">
     <ion-menu side="start" id="side">
       <ion-header>
-        <ion-toolbar>
+        <ion-toolbar color="primary">
           <ion-menu-toggle [routerLink]="['tab/profile']" autoHide="false">
             <ion-row>
               <ion-avatar style="margin: 15px 0px 0px 15px">
@@ -12,7 +12,6 @@
             <ion-row>
               <ion-title>Abhiram Thakur</ion-title>
             </ion-row>
-
           </ion-menu-toggle>
 
         </ion-toolbar>
@@ -21,38 +20,39 @@
         <ion-list lines="none">
           <ion-menu-toggle autoHide="false">
             <ion-item padding-top [routerLink]="['/settings']" routerLinkActive="router-link-active">
-              <ion-icon name="settings" slot="start"></ion-icon>
-              Settings
+              <img src="../assets/imgs/SystemIcons/settings.svg" class="default-icon" />
+              <ion-text class="text">Settings</ion-text>
             </ion-item>
           </ion-menu-toggle>
           <ion-menu-toggle autoHide="false">
             <ion-item padding-top>
-              <ion-icon name="information-circle-outline" slot="start"></ion-icon>
-              App Info
+              <img src="../assets/imgs/SystemIcons/info.svg" class="default-icon" />              
+              <ion-text class="text">App Info</ion-text>
             </ion-item>
           </ion-menu-toggle>
           <ion-menu-toggle autoHide="false">
             <ion-item padding-top>
-              <ion-icon name="help" slot="start"></ion-icon>
-              FAQ
+              <img src="../assets/imgs/SystemIcons/FAQ.svg" class="default-icon" />              
+              <ion-text class="text">FAQ</ion-text>
             </ion-item>
           </ion-menu-toggle>
           <ion-menu-toggle autoHide="false">
             <ion-item padding-top>
-              <ion-icon name="document" slot="start"></ion-icon>
-              Terms and Privacy
+              <img src="../assets/imgs/SystemIcons/terms and privacy.svg" class="default-icon" />              
+              <ion-text class="text">Terms and Privacy</ion-text>
             </ion-item>
           </ion-menu-toggle>
           <ion-menu-toggle autoHide="false">
             <ion-item padding-top>
-              <ion-icon name="mail" slot="start"></ion-icon>
-              Invite Friends
+              <img src="../assets/imgs/SystemIcons/invite friends.svg" class="default-icon" />
+              <ion-text class="text">Invite Friends</ion-text>
             </ion-item>
           </ion-menu-toggle>
           <ion-menu-toggle autoHide="false">
             <ion-item padding-top>
-              <ion-icon name="log-out" slot="start"></ion-icon>
-              Sign Out
+              <img src="../assets/imgs/SystemIcons/sign out.svg" class="default-icon" />
+              <ion-text class="text">Sign Out</ion-text>
+              
             </ion-item>
           </ion-menu-toggle>
 

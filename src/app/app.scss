@@ -21,8 +21,7 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-@font-face
-{
+@font-face {
   font-family: "DroidSans";
   src: url("../assets/DroidSans.ttf");
   font-weight: normal;
@@ -49,10 +48,23 @@
 //     &[class*="homefilled"] {
 //         mask-image: url(../assets/imgs/homefilled.svg);
 //     }
-    
+
 // }
+
+
+.default-icon {
+  height: 24px;
+  width: 24px;
+}
+
+
+.text {
+  font-family: "DroidSans";
+  margin-left: 14px;
+}
 
 ion-toolbar {
   --color: white;
-  --background: linear-gradient(to right, rgba(23,120,125,1) ,  rgba(0,187,180,1)) !important;
+  // height: 56px;
+  --background: linear-gradient(to right, #17787d , #00bbb4) !important;
 }

@@ -8,12 +8,10 @@ import {
 import {
     TabPage
 } from './tab.page';
-
 const routes: Routes = [{
         path: '',
         component: TabPage,
-        children: [
-            {
+        children: [{
                 path: 'mystory',
                 loadChildren: '../mystory/mystory.module#MystoryPageModule',
             },
@@ -24,6 +22,16 @@ const routes: Routes = [{
             {
                 path: 'profile',
                 loadChildren: '../profile/profile.module#ProfilePageModule',
+                // loadChildren: '../profile/edit-profile/edit-profile.module#EditProfilePageModule'
+                // children: [{
+                //         path: '',
+                //         loadChildren: '../profile/profile.module#ProfilePageModule',
+                //     },
+                //     {
+                //         path: 'edit',
+                //         loadChildren: '../profile/edit-profile/edit-profile.module#EditProfileModule',
+                //     }
+                // ]
             },
             {
                 path: 'home',
@@ -33,7 +41,7 @@ const routes: Routes = [{
     },
     {
         path: '',
-        redirectTo: 'tabs/home',
+        redirectTo: 'home',
         pathMatch: 'full'
     }
 ];
@@ -43,4 +51,4 @@ const routes: Routes = [{
     exports: [RouterModule]
 })
 
-export class TabRoutingModule { }
+export class TabRoutingModule {}
