@@ -38,7 +38,7 @@
       </ion-col>
 
       <ion-col size="10">
-        <ion-text class="title" style="font-size: 15px">
+        <ion-text class="title">
           <b>{{event.name}}<br></b>
           <span class="text" style="margin: 0px;padding:0px;">{{event.category}} <ion-icon [name]="event.scope" margin-start></ion-icon></span>
         </ion-text>
@@ -93,6 +93,33 @@
     </ion-row>
 
     <div class="divide"></div>
+    <div class="no-padding">
+      <ion-grid class="no-padding">
+        <ion-row margin-end margin-start>
+          <ion-col  size="4" class="ion-text-center">
+            <img src="../../assets/imgs/SystemIcons/share.svg" class="eventd-icon" />
+            <div class="text " style="margin-top:0px;width:100%;margin-left:0px;font-size: 14px;opacity:60%">
+              Share
+            </div>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <img src="../../assets/imgs/SystemIcons/star border.svg" class="eventd-icon" *ngIf='!star' (click)=starEvent() />
+            <img src="../../assets/imgs/SystemIcons/star filled.svg" class="eventd-icon" *ngIf=star (click)=starEvent() />
+            <div class="text " style="margin-top:0px;width:100%;margin-left:0px;font-size: 14px;opacity:60%">
+              Interested
+            </div>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <img src="../../assets/imgs/SystemIcons/join event 2.svg" class="eventd-icon" />
+            <div class="text " style="margin-top:0px;width:100%;margin-left:0px;font-size: 14px;opacity:60%">
+              Join
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="divide"></div>
+
 
 
     <ion-row>
@@ -102,14 +129,14 @@
       <div style="width: 60px;float:left" class=" ion-text-center">
         <img src="../../../assets/imgs/SystemIcons/Stipend.svg" class="facilities"
           />
-          <div class="text ion-text-center" style="margin-top:-10px;width:100%;margin-left:-2px;font-size: 12px;opacity:60%">
+          <div class="text ion-text-center" style="margin-top:-5px;width:100%;margin-left:-2px;font-size: 12px;opacity:60%">
             Stipend
           </div>
       </div>
       <div style="width: 60px;float:left" class=" ion-text-center">
         <img src="../../../assets/imgs/SystemIcons/snacks (cup).svg" class="facilities"
           />
-          <div class="text ion-text-center" style="margin-top:-10px;width:100%;margin-left:-2px;font-size: 12px;opacity:60%">
+          <div class="text ion-text-center" style="margin-top:-5px;width:100%;margin-left:-2px;font-size: 12px;opacity:60%">
             Snacks
           </div>
       </div>
@@ -117,7 +144,7 @@
 
     <div class="divide"></div>
     <div (click)="onDropDown()">
-      <ion-text class="text" style="margin-left:3%"><b>Required Skills</b></ion-text>
+      <ion-text class="text" style="margin-left:3%;font-size:14px;"><b>Required Skills</b></ion-text>
       <img src="../../../assets/imgs/SystemIcons/drop_down.svg" class="default-icon"
         style="float: right; margin-right: 3%" />
     </div>
