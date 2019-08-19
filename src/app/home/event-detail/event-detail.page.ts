@@ -47,31 +47,12 @@ export class EventDetailPage implements OnInit {
      console.log(this.showSkill);
    }
 
-   async onClickAlert() {
-    const alert = await this.alertController.create({
-      header: 'Are you sure',
-      message: 'Leave ' + this.event.name,
-      buttons: [
-        {
-          text: 'Yes',
-          handler: () => {
-            this.router.navigateByUrl('/tab/home');
-          }
-        }, {
-          text: 'No',
-          role: 'cancel'
-        }
-      ]
-    });
-
-    await alert.present();
-  }
-
 // popover
 async present(ev: any) {
   const popover = await this.popoverController.create({
     component: PopmenuComponent,
     event: ev,
+    animated: false,
     // translucent: true,
   });
   return await popover.present();

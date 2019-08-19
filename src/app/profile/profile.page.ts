@@ -16,7 +16,7 @@ showEh = false;
 showEv = false;
 showskll = false;
 showInterst = false;
-
+following = false;
 
 
 events: Event[] = this.eventService.getAllEvents();
@@ -51,5 +51,9 @@ showSkill() {
 
 showInterest() {
   this.showInterst = !this.showInterst;
+}
+
+follow() {
+  this.following = !this.following;
 }
 }

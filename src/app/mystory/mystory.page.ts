@@ -11,8 +11,16 @@ export class MystoryPage implements OnInit {
   events: Event[] = this.eventService.getAllEvents();
   constructor(private eventService: EventsService) {}
 
-
+  showEv = false;
+  showEh = false;
   ngOnInit() {
   }
-
+  showEV() {
+    this.showEv = !this.showEv;
+  }
+  
+  showEH() {
+    this.showEh = !this.showEh;
+  }
+  
 }

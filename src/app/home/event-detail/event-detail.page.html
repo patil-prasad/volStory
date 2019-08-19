@@ -2,14 +2,17 @@
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-buttons padding-end>
-        <img src="../../../assets/imgs/SystemIcons/arrow_back.svg" class="default-icon" (click)=onClickAlert()
+        <img src="../../../assets/imgs/SystemIcons/arrow_back.svg" class="default-icon" [routerLink]="['/tab/home']" routerLinkActive="router-link-active" 
           margin-start />
       </ion-buttons>
     </ion-buttons>
     {{ event.name}}
     <ion-buttons slot="end">
       <img src="../../../assets/imgs/SystemIcons/share.svg" class="default-icon" />
-      <img src="../../../assets/imgs/SystemIcons/more(3 dots).svg" class="default-icon" margin-start (click)=present() />
+      <ion-button (click)=present($event) >
+        <img src="../../../assets/imgs/SystemIcons/more(3 dots).svg" class="default-icon" margin-start
+          />
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -20,10 +23,10 @@
     <div style="padding-top: 150px;margin-right: 10px">
       <circle-progress [percent]="20" [title]="['3/15','Joined']"></circle-progress>
       <div class="sub-text ion-text-center" style="float:right;color:white;margin-top:18px;">
-          <ion-text class="title" style="color:white;font-size:16px"><b>27</b></ion-text>
-          <small><br>Interested</small>
+        <ion-text class="title" style="color:white;font-size:16px"><b>27</b></ion-text>
+        <small><br>Interested</small>
       </div>
-      
+
     </div>
 
   </div>
@@ -40,7 +43,8 @@
       <ion-col size="10">
         <ion-text class="title">
           <b>{{event.name}}<br></b>
-          <span class="text" style="margin: 0px;padding:0px;">{{event.category}} <ion-icon [name]="event.scope" margin-start></ion-icon></span>
+          <span class="text" style="margin: 0px;padding:0px;">{{event.category}} <ion-icon [name]="event.scope"
+              margin-start></ion-icon></span>
         </ion-text>
       </ion-col>
     </ion-row>
@@ -96,15 +100,17 @@
     <div class="no-padding">
       <ion-grid class="no-padding">
         <ion-row margin-end margin-start>
-          <ion-col  size="4" class="ion-text-center">
+          <ion-col size="4" class="ion-text-center">
             <img src="../../assets/imgs/SystemIcons/share.svg" class="eventd-icon" />
             <div class="text " style="margin-top:0px;width:100%;margin-left:0px;font-size: 14px;opacity:60%">
               Share
             </div>
           </ion-col>
           <ion-col size="4" class="ion-text-center">
-            <img src="../../assets/imgs/SystemIcons/star border.svg" class="eventd-icon" *ngIf='!star' (click)=starEvent() />
-            <img src="../../assets/imgs/SystemIcons/star filled.svg" class="eventd-icon" *ngIf=star (click)=starEvent() />
+            <img src="../../assets/imgs/SystemIcons/star border.svg" class="eventd-icon" *ngIf='!star'
+              (click)=starEvent() />
+            <img src="../../assets/imgs/SystemIcons/star filled.svg" class="eventd-icon" *ngIf=star
+              (click)=starEvent() />
             <div class="text " style="margin-top:0px;width:100%;margin-left:0px;font-size: 14px;opacity:60%">
               Interested
             </div>
@@ -127,18 +133,18 @@
     </ion-row>
     <div style="margin-left:4%;width:100%;height: 52px;">
       <div style="width: 60px;float:left" class=" ion-text-center">
-        <img src="../../../assets/imgs/SystemIcons/Stipend.svg" class="facilities"
-          />
-          <div class="text ion-text-center" style="margin-top:-5px;width:100%;margin-left:-2px;font-size: 12px;opacity:60%">
-            Stipend
-          </div>
+        <img src="../../../assets/imgs/SystemIcons/Stipend.svg" class="facilities" />
+        <div class="text ion-text-center"
+          style="margin-top:-5px;width:100%;margin-left:-2px;font-size: 12px;opacity:60%">
+          Stipend
+        </div>
       </div>
       <div style="width: 60px;float:left" class=" ion-text-center">
-        <img src="../../../assets/imgs/SystemIcons/snacks (cup).svg" class="facilities"
-          />
-          <div class="text ion-text-center" style="margin-top:-5px;width:100%;margin-left:-2px;font-size: 12px;opacity:60%">
-            Snacks
-          </div>
+        <img src="../../../assets/imgs/SystemIcons/snacks (cup).svg" class="facilities" />
+        <div class="text ion-text-center"
+          style="margin-top:-5px;width:100%;margin-left:-2px;font-size: 12px;opacity:60%">
+          Snacks
+        </div>
       </div>
     </div>
 
@@ -194,47 +200,47 @@
     </ion-row>
     <!-- harcode -->
     <ion-row>
-        <ion-col size="2" text-center>
-          <img src="../../../assets/imgs/category- senior citizen.svg" class="profile-img " />
-        </ion-col>
-        <ion-col size="10" margin-start>
-          <div class="text">
-            <b>Person name</b>
-            <br>
-            Awesome!! wish to work with you again
-            <span class="sub-text" style="font-size: 8px"><br>36 min</span>
-          </div>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-          <ion-col size="2" text-center>
-            <img src="../../../assets/imgs/category- senior citizen.svg" class="profile-img " />
-          </ion-col>
-          <ion-col size="10" margin-start>
-            <div class="text">
-              <b>Person name</b>
-              <br>
-              Awesome!! wish to work with you again
-              <span class="sub-text" style="font-size: 8px"><br>36 min</span>
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col size="2" text-center>
-              <img src="../../../assets/imgs/category- senior citizen.svg" class="profile-img " />
-            </ion-col>
-            <ion-col size="10" margin-start>
-              <div class="text">
-                <b>Person name</b>
-                <br>
-                Awesome!! wish to work with you again
-                <span class="sub-text" style="font-size: 8px"><br>36 min</span>
-              </div>
-            </ion-col>
-          </ion-row>
+      <ion-col size="2" text-center>
+        <img src="../../../assets/imgs/category- senior citizen.svg" class="profile-img " />
+      </ion-col>
+      <ion-col size="10" margin-start>
+        <div class="text">
+          <b>Person name</b>
+          <br>
+          Awesome!! wish to work with you again
+          <span class="sub-text" style="font-size: 8px"><br>36 min</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" text-center>
+        <img src="../../../assets/imgs/category- senior citizen.svg" class="profile-img " />
+      </ion-col>
+      <ion-col size="10" margin-start>
+        <div class="text">
+          <b>Person name</b>
+          <br>
+          Awesome!! wish to work with you again
+          <span class="sub-text" style="font-size: 8px"><br>36 min</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" text-center>
+        <img src="../../../assets/imgs/category- senior citizen.svg" class="profile-img " />
+      </ion-col>
+      <ion-col size="10" margin-start>
+        <div class="text">
+          <b>Person name</b>
+          <br>
+          Awesome!! wish to work with you again
+          <span class="sub-text" style="font-size: 8px"><br>36 min</span>
+        </div>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 
-<!-- Adding comments -->
+  <!-- Adding comments -->
   <div style="margin-bottom:40px;border: 0.5px solid #b2b2b2;border-radius: 5px; ">
     <ion-row>
       <ion-col size="10">

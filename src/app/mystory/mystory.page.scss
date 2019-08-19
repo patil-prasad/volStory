@@ -1,3 +1,27 @@
+
+
+.detail {
+    margin-left: 10px;
+}
+
+.divide{          
+    border-bottom: 1px solid #b2b2b2  ;
+    //min-height:2px;
+    height: 1px;
+    margin-left: 3.2%;
+    margin-right:3.2% ;
+}
+
+ion-label {
+    font-family: "DroidSans";
+    font-size: 13px;
+}
+
+.text {
+    font-family: "DroidSans";
+    font-size: 13px;
+}
+
 ion-item.md ion-item.ios {
     width:100%;
     padding: 0px
@@ -14,10 +38,7 @@ ion-item.md ion-item.ios {
     height:16px;
     width:16px
 }
-.filter-icon {
-    height: 40px;
-    width: 40px;
-}
+
 .subtext{
     font-size: 14px;
     opacity: 60%;   
@@ -26,7 +47,7 @@ ion-item.md ion-item.ios {
    // line-height: 12.2px;     
 }
 
-.info{
+.infoe{
     font-size: 14px;
     font-family: "DroidSans"; 
     margin-left:10px
@@ -54,21 +75,12 @@ p{
     border-bottom: 0.5px solid;
     border-color: gray;
 }
-ion-searchbar {
-    padding: 0
-}
-ion-row ion-col ion-grid {
-    padding: 0px;
-    margin:0px
-}
+
+
 
 label {
     font-family: "DroidSans";
     font-size: 14px;
     margin: 0px;
     padding:0px;
-}
-
-ion-list {
-    padding: 0px
 }

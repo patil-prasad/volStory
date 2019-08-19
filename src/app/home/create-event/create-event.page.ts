@@ -15,15 +15,16 @@ import {
   styleUrls: ['./create-event.page.scss'],
 })
 export class CreateEventPage implements OnInit {
-  progress = 0.666;
+  constructor(private router: Router) {}
+  progress = 0.333;
   snack = false;
   certificate = false;
   meal = false;
   money = false;
-  constructor(private router: Router) {}
+  min = 0;
 
   ngOnInit() {
-    this.progress = 0.666;
+    this.progress = 0.333;
   }
 
   next() {
@@ -38,9 +39,7 @@ export class CreateEventPage implements OnInit {
     console.log(f);
   }
 
-
-  // for min max of no of volunteers
-  min = 0;
+   // for min max of no of volunteers
   plusMin() {
     this.min = this.min + 1;
   }
